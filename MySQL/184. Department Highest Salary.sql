@@ -24,7 +24,9 @@
 -- | IT         | Max      | 90000  |
 -- | Sales      | Henry    | 80000  |
 -- +------------+----------+--------+
+--------------------------------------------------------------------------
 
+--------  Below is 383ms
 SELECT D.Name AS Department ,E.Name AS Employee ,E.Salary 
 FROM
 	Employee E,
@@ -35,7 +37,9 @@ WHERE E.DepartmentId = T.DepartmentId
   AND E.DepartmentId = D.id
 
 ---------------------------------------------------------------------------
-SELECT D.Name,A.Name,A.Salary 
+--Below is 363ms
+
+SELECT D.Name AS Department ,A.Name AS Employee ,A.Salary 
 FROM 
 	Employee A,
 	Department D   
@@ -45,6 +49,7 @@ WHERE A.DepartmentId = D.Id
 
 
 ---------------------------------------------------------------------------
+-- Below is 313ms
 SELECT D.Name AS Department ,E.Name AS Employee ,E.Salary 
 from 
 	Employee E,
