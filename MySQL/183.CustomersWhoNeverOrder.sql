@@ -32,8 +32,8 @@ WHERE NOT EXISTS (SELECT 1 from Orders B WHERE A.Id = B.CustomerId)
 
 
 SELECT A.Name AS Customers from Customers A
-LEFT JOIN Orders B on  a.Id = B.CustomerId
-WHERE b.CustomerId is NULL
+LEFT JOIN Orders B on  A.Id = B.CustomerId
+WHERE B.CustomerId is NULL
 
 SELECT A.Name AS Customers from Customers A
 WHERE A.Id NOT IN (SELECT B.CustomerId from Orders B)
